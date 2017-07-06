@@ -1,0 +1,53 @@
+
+<h1>Restaurant App Login </h1>
+<div class="main-agileits">
+<!--form-stars-here-->
+			<% if(hasErrors && messages){ %>
+					<div class="alert alert-danger">
+							<% for(var i=0;i< messages.length;i++){ %>
+									<%= messages[i].msg %>
+									<br>
+							<% } %>
+					</div>
+			<% } %>
+			<% if(hasErrors === 0 && messages){ %>
+					<div class="alert alert-success">
+							<% for(var i=0;i< messages.length;i++){ %>
+									<%= messages[i].msg %>
+									<br>
+							<% } %>
+					</div>
+			<% } %>
+		<div class="form-w3-agile">
+			<h2>Credit login form</h2>
+
+			<form action="/" method="post">
+				<div class="form-sub-w3">
+					<input type="text" id="mobile" name="mobile" placeholder="Mobile"
+                onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')"
+								value="" maxlength="10" required data-error="*Please fill out this field" />
+				<div class="icon-w3">
+					<i class="fa fa-user" aria-hidden="true"></i>
+				</div>
+
+				</div>
+				<div class="form-sub-w3">
+					<input type="password" id="password" name="password" value="" placeholder="Password" required />
+				<div class="icon-w3">
+					<i class="fa fa-unlock-alt" aria-hidden="true"></i>
+				</div>
+				</div>
+				<p class="p-bottom-w3ls">Are you a new User?  <b>
+					<a class="w3_play_icon1" href="/register">  Register here</a></b></p>
+
+				<a class="w3_play_icon1" href="/booking">
+					 <input type="submit" value="Book here"/>
+				 </a>
+
+				<div class="submit-w3l">
+					<input type="hidden" name="_csrf" value="<%= token %>"/>
+					<input type="submit" id="login" value="Login">
+				</div>
+			</form>
+		</div>
+<!--//form-ends-here-->

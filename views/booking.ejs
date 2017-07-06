@@ -1,0 +1,62 @@
+
+ <script>
+		function clicked(e)
+	{
+	    if(!confirm('Are you sure?'))e.preventDefault();
+	}
+	</script>
+
+
+<h1> Restaurant Booking Form </h1>
+    <div class="bg-agile">
+	<div class="book-reservation">
+			<form action="/locator" method="post" onclick="clicked(event)" >
+					<div class="form-date-w3-agileits">
+						<label><i class="fa fa-user" aria-hidden="true"></i> Name :</label>
+						<input type="text" name="name" placeholder="Your name" required=""/>
+					</div>
+					<div class="form-date-w3-agileits">
+						<label><i class="fa fa-envelope" aria-hidden="true"></i> Email :</label>
+						<input type="email" name="email" placeholder="Your email" required="" />
+					</div>
+					 <div class="form-date-w3-agileits">
+						<label><i class="fa fa-calendar" aria-hidden="true"></i> Arrival Date :</label>
+						<input  id="datepicker1" name="Text" type="text" value="mm/dd/yyyy" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" required="">
+					</div>
+					<div class="form-time-w3layouts">
+							<label><i class="fa fa-clock-o" aria-hidden="true"></i> Time :</label>
+							<input type="text" name="Time" class="timepicker form-control" value="Hrs:Min">
+					</div>
+					<div class="form-date-w3-agileits">
+						<label><i class="fa fa-calendar" aria-hidden="true"></i> Departure Date :</label>
+						<input  id="datepicker2" name="Text" type="text" value="mm/dd/yyyy" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" required="">
+					</div>
+					<div class="form-time-w3layouts">
+							<label><i class="fa fa-clock-o" aria-hidden="true"></i> Time :</label>
+							<input type="text" name="Time" class="timepicker form-control" value="Hrs:Min">
+					</div>
+
+					<div class="form-left-agileits-w3layouts">
+							<label><i class="fa fa-users" aria-hidden="true"></i> No.of People :</label>
+							<select class="form-control">
+								<option>Persons</option>
+								<option>1 Person</option>
+								<option>2 People</option>
+								<option>3 People</option>
+								<option>4 People</option>
+
+								<option>More</option>
+							</select>
+					</div>
+					<div class="form-date-w3-agileits">
+						<label><i class="fa fa-mobile" aria-hidden="true"></i> Mobile Number :</label>
+						<input type="text" name="mobile" placeholder="Your Mobile Number" required=""/>
+					</div>
+
+					<div class="clear"> </div>
+					<div class="make">
+						  <input type="submit" value="Make a Booking">
+					</div>
+			</form>
+		</div>
+   </div>

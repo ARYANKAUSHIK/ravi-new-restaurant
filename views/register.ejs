@@ -1,0 +1,59 @@
+
+<h1> Sign Up New User  </h1>
+<% if(hasErrors && messages){ %>
+         <div class="alert alert-danger">
+         <% for(var i=0;i< messages.length;i++){ %>
+         <%= messages[i].msg %>
+         <br>
+        <% } %>
+         </div>
+        <% } %>
+        
+    <div class="bg-agile">
+
+	<div class="book-reservation">
+
+			<form action="/register" method="post">
+
+					<div class="form-date-w3-agileits">
+						<label><i class="fa fa-user" aria-hidden="true"></i> Name :</label>
+						<input type="text" placeholder="Your name" required value="<%= data&&data.name? data.name: '' %>"
+                id="name" name="name"/>
+					</div>
+
+					<div class="form-date-w3-agileits">
+						<label><i class="fa fa-envelope" aria-hidden="true"></i> Email :</label>
+						<input type="email" placeholder="Your email"
+            id="email" required data-error="*Please fill out this field"
+                     value="<%= data&&data.email? data.email: '' %>" name="email"/>
+					</div>
+
+          <div class="form-date-w3-agileits">
+						<label><i class="fa fa-envelope" aria-hidden="true"></i> Mobile :</label>
+						<input type="text" id="mobile" placeholder="Mobile" required data-error="*Please fill out this field"
+                    value="<%= data&&data.mobile? data.mobile: '' %>" name="mobile"
+                   onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')" maxlength="10" />
+					</div>
+
+					<div class="form-date-w3-agileits">
+						<label><i class="fa fa-unlock-alt" aria-hidden="true"></i> Password :</label>
+						<input placeholder="Password" type="password" id="password" value="<%= data&&data.password? data.password: '' %>" name="password"
+                      required data-error="*Please fill out this field">
+					</div>
+					<div class="form-date-w3-agileits">
+						<label><i class="fa fa-unlock-alt" aria-hidden="true"></i>  Re-Enter Password :</label>
+
+						<input placeholder="Confirm Password" type="password"
+            id="confirm-password" name="confirm_password" value="<%= data && data.confirm_password? data.confirm_password: '' %>"
+                      required>
+					</div>
+
+
+					<div class="clear"> </div>
+					<div class="make">
+            <input type="hidden" name="_csrf" value="<%= token %>">
+						  <input type="submit"  href="locator" id="register" value="Sign Up">
+					</div>
+			</form>
+		</div>
+   </div>
