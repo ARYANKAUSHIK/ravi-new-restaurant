@@ -1,7 +1,7 @@
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-      #map {
+    #map {
         height: 100%;
         width: 85%; 
         margin-top: 5%;
@@ -19,6 +19,7 @@
       table {
         font-size: 12px;
       }
+      
       #results {
         position: static;
         width: auto;
@@ -168,7 +169,6 @@
         </table>
       </div>
     </div>
-
     <script>
       // This example uses the autocomplete feature of the Google Places API.
       // It allows the user to find all hotels in a given place, within a given
@@ -422,7 +422,7 @@
         // for the rating points not achieved.
         if (place.rating) {
           var ratingHtml = '';
-          for (var i = 0; i < 5; i++) { 
+          for (var i = 0; i < 5; i++) {
             if (place.rating < (i + 0.5)) {
               ratingHtml += '<span style="font-size:200%;color:blue;">&star;</span>';
             } else {
